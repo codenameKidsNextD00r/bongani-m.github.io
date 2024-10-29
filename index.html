@@ -33,6 +33,7 @@
             padding: 0;
             display: flex;
             gap: 15px;
+            font-size: 14px;
         }
 
         nav a {
@@ -52,7 +53,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Stack items vertically */
+            flex-direction: column; 
         }
 
         footer {
@@ -63,6 +64,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            font-size: 10px;
         }
 
         .typing {
@@ -109,6 +111,31 @@
         #about-me p {
             margin: 0;
             padding: 0;
+            font-size: small;
+            width: fit-content;
+        }
+
+        .arrow-nav {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .arrow-up, .arrow-down {
+            cursor: pointer;
+            /* font-size: 2em; */
+            color: yellow;
+            user-select: none;
+        }
+
+        .arrow-up {
+            top: 10px;
+        }
+
+        .arrow-down {
+            bottom: 10px;
         }
     </style>
 </head>
@@ -129,14 +156,22 @@
 
     <section id="hello">
         <div class="typing">HELLO :)</div>
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('about')">&#x2193;</span>
+        </div>
     </section>
 
     <section id="about">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('hello')">&#x2191;</span>
+        </div>
+
         <h1>Bongani Mlumbi</h1>
         <p>I'm a developer. What's your superpower?</p>
         <div id="shrug">
             <p>¯\_(ツ)_/¯</p>
         </div> 
+
         <div id="about-me">
             <p>
                 A dedicated software developer with a passion for building efficient, scalable, and user-friendly solutions. 
@@ -144,16 +179,41 @@
                 I am eager to continuously learn, grow, and contribute to innovative projects that make an impact.
             </p>
         </div>
+
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('projects')">&#x2193;</span>
+        </div>
+        
     </section>
 
     <section id="projects">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('about')">&#x2191;</span>
+        </div>
+
         <h1>Projects</h1>
         <p>Here you can explore some of my work.</p>
+
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('contact')">&#x2193;</span>
+        </div>
+        
     </section>
 
     <section id="contact">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('about')">&#x2191;</span>
+        </div>
+
         <h1>Contact</h1>
-        <p>Email: bongani@example.com</p>
+
+        <div id="email-container">
+            <div id="mail-icon">
+                <span>✉️</span>
+            </div>
+    
+            <p>mlumbibongani@gmail.com</p>   
+        </div>     
     </section>
 
     <footer>
@@ -172,7 +232,6 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Smooth scrolling to sections
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -181,6 +240,12 @@
                 });
             });
         });
+
+        function scrollToSection(id){
+            document.getElementById(id).scrollIntoView({
+                behavior:"smooth"
+            });
+        }
     </script>
 
 </body>
