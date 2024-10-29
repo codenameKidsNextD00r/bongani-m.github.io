@@ -5,32 +5,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bongani Mlumbi | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #000;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            /* z-index: 1000; */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        #clock {
+            font-size: 14px;
+            color: #00ff00;
+            background-color: #000;
+            margin-right: 25px;
+            /* padding: 5px 10px; */
+            /* border: 1px solid #00ff00; */
+        }
+
+        section {
+            height: 100vh; /* Full screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            background-color: #000;
+            color: #00ff00;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .typing {
+            font-size: 3em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid #00ff00;
+            animation: typing 3s steps(10) infinite, blink 0.5s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 10ch;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        
+        #about, #projects, #contact {
+            text-align: center;
+            /* background-color: #004d4d; */
+            padding: 50px;
+        }
+
+        h1, h2 {
+            margin: 0;
+            padding: 10px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00ff00;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-    <header> 
+
+    <header>
         <nav>
             <ul>
+                <li><a href="#hello">HELLO</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div id="clock"></div>
     </header>
 
-    <section></section>
-    <div id="headshot">
-        <img src="assets/headshot.jpg" alt="headshot">
-    </div>
-    
-    <div id="name_card">
-        <h1>BONGANI MLUMBI</h1>
+    <section id="hello">
+        <div class="typing">HELLO :)</div>
+    </section>
+
+    <section id="about">
+        <!-- <img src="assets/headshot.jpg" alt="Headshot"> -->
+        <h1>Bongani Mlumbi.</h1>
         <h2>Software Developer</h2>
-    </div>
+        <p></p>
+    </section>
+
+    <section id="projects">
+        <h1>Projects</h1>
+        <p>Here you can explore some of my work.</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Email: bongani@example.com</p>
+    </section>
 
     <footer>
         <p>&copy; 2024 Bongani Mlumbi. All rights reserved.</p>
     </footer>
+
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Smooth scrolling to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
