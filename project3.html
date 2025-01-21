@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Bongani Mlumbi | Projects</title>
+    <style>
+        /* Gallery styles */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#projects"> < Back</a></li>
+            </ul>
+        </nav>
+        <div id="clock"></div>
+    </header>
+
+    <section id="project1-intro" class="project1-intro">
+        <div>
+            <h1>PDF Scraper</h1>
+            <p>This is a personal project currently under development. The application allows users to upload a bank statement and specify parameters, such as income. It then processes the statement and outputs details of incoming funds based on the provided criteria. Currently, the project only has a backend implementation.</p>
+        </div>
+
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('gallery')">&#x2193;</span>
+        </div>
+    </section>
+    
+    <section id="gallery" class="gallery">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('project1-intro')">&#x2191;</span>
+        </div>
+
+        <h1>Gallery</h1>
+
+        <div class="gallery-container">
+            
+            
+            <div class="gallery-item" onclick="openModal('')">
+                <img src="" alt="Screenshot 1">
+            </div>
+
+        </div>
+        
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('project1-stack')">&#x2193;</span>
+        </div>
+    </section>
+
+    <section id="project1-stack" class="project1-stack">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('gallery')">&#x2191;</span>
+        </div>
+
+        <div>
+            <h1>TOOLS</h1>
+
+            <ul>
+                <li>Python</li>
+                
+            </ul>
+
+            <p>View the full repo <a href="https://github.com/codenameKidsNextD00r/pfd_scrape" target="_blank">here</a></p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Expanded Screenshot">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bongani Mlumbi. All rights reserved.</p>
+    </footer>
+
+    <script src="dynamics.js"></script>
+    <script>
+        // Open Modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        // Close Modal
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
