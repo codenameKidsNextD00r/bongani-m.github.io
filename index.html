@@ -4,140 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Bongani Mlumbi | Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-        body {
-            font-family: 'Press Start 2P', monospace;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background-color: #000;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            gap: 15px;
-            font-size: 14px;
-        }
-
-        nav a {
-            color: #00ff00;
-            text-decoration: none;
-        }
-
-        #clock {
-            font-size: 14px;
-            color: #00ff00;
-            background-color: #000;
-            margin-right: 25px;
-        }
-
-        section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; 
-        }
-
-        footer {
-            background-color: #000;
-            color: #00ff00;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 10px;
-        }
-
-        .typing {
-            font-size: 3em;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid #00ff00;
-            animation: typing 3s steps(10) infinite, blink 0.5s step-end infinite;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 10ch;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        #about, #projects, #contact {
-            text-align: center;
-            padding: 50px;
-        }
-
-        h1, h2 {
-            margin: 0;
-            padding: 10px;
-        }
-
-        #shrug {
-            margin-top: 20px;
-        }
-
-        #about-me {
-            margin-top: 20px;
-        }
-
-        #about-me p {
-            margin: 0;
-            padding: 0;
-            font-size: small;
-            width: fit-content;
-        }
-
-        .arrow-nav {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 15px;
-        }
-
-        .arrow-up, .arrow-down {
-            cursor: pointer;
-            font-size: 2em;
-            color: yellow;
-            user-select: none;
-        }
-
-        .arrow-up {
-            top: 10px;
-        }
-
-        .arrow-down {
-            bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -161,23 +29,32 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="about">
         <div class="up-nav">
             <span class="arrow-down" onclick="scrollToSection('hello')">&#x2191;</span>
         </div>
 
-        <h1>Bongani Mlumbi</h1>
-        <p>I'm a developer. What's your superpower?</p>
-        <div id="shrug">
-            <p>¯\_(ツ)_/¯</p>
-        </div> 
-
-        <div id="about-me">
-            <p>
-                A dedicated software developer with a passion for building efficient, scalable, and user-friendly solutions. 
-                With experience in back-end development, microservices, and DevOps practices, I thrive in collaborative environments where I can solve problems and create meaningful solutions. 
-                I am eager to continuously learn, grow, and contribute to innovative projects that make an impact.
-            </p>
+        <div class="about-content">
+            <div class="about-img", id="class-img">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXN3YWs5ejM2YTF1c25weW80bHptZmFyMm9pam5zaGtybW1td25iciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYB0AlFnTTEpXsQ/giphy.gif" alt="orb">
+            </div>
+    
+            <div id="about-text"  class="about-text">
+    
+                <h1>Bongani Mlumbi</h1>
+                <p>I'm a developer. What's your superpower?</p>
+                <div id="shrug">
+                    <p>¯\_(ツ)_/¯</p>
+                </div> 
+    
+                <div id="about-me">
+                    <p>
+                        A dedicated software developer with a passion for building efficient, scalable, and user-friendly solutions. 
+                        With experience in back-end development, microservices, and DevOps practices, I thrive in collaborative environments where I can solve problems and create meaningful solutions. 
+                        I am eager to continuously learn, grow, and contribute to innovative projects that make an impact.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="down-nav">
@@ -191,26 +68,31 @@
             <span class="arrow-down" onclick="scrollToSection('about')">&#x2191;</span>
         </div>
 
-        <h1>Projects</h1>
-        <p>Here you can explore some of my work.</p>
-        <div class="">
-            <span>&#128193;</span>
-            <a href="https://github.com/codenameKidsNextD00r/Chef60Foods" target="_blank">Chef60Foods</a>
-        </div>
+        <div class="projects-content">
+            <div class="projects-text">
+                <h1>Projects</h1>
+                <p>Here you can explore some of my work.</p>
+                <div class="">
+                    <span>&#128193;</span>
+                    <a href="project1.html">Chef60Foods</a>
+                </div>
 
-        <div>
-            <span>&#128193;</span>
-            <a href="https://github.com/codenameKidsNextD00r/wrong-creative-studio" target="_blank">Wrong Creative Studios</a>
-        </div>
+                <div>
+                    <span>&#128193;</span>
+                    <a href="https://github.com/codenameKidsNextD00r/wrong-creative-studio" target="_blank">Wrong Creative Studios</a>
+                </div>
 
-        <div>
-            <span>&#128193;</span>
-            <a href="https://github.com/codenameKidsNextD00r/POE_ST10103745" target="_blank">Second Year Project</a>
-        </div>
+                <div>
+                    <span>&#128193;</span>
+                    <a href="https://github.com/codenameKidsNextD00r/POE_ST10103745" target="_blank">Second Year Project</a>
+                </div>
 
-        <div>
-            <span>&#128193;</span>
-            <a href="https://github.com/codenameKidsNextD00r/DisasterAlleviationFoundation" target="_blank">Second Year Project</a>
+                <div>
+                    <span>&#128193;</span>
+                    <a href="https://github.com/codenameKidsNextD00r/DisasterAlleviationFoundation" target="_blank">Second Year Project</a>
+                </div>
+            </div>
+
         </div>
 
         <div class="down-nav">
@@ -238,33 +120,7 @@
         <p>&copy; 2024 Bongani Mlumbi. All rights reserved.</p>
     </footer>
 
-    <script>
-        function updateClock() {
-            const clockElement = document.getElementById('clock');
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        function scrollToSection(id){
-            document.getElementById(id).scrollIntoView({
-                behavior:"smooth"
-            });
-        }
-    </script>
+    <script src="dynamics.js"></script>
 
 </body>
 </html>
