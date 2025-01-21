@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Bongani Mlumbi | Projects</title>
+    <style>
+        /* Gallery styles */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#projects"> < Back</a></li>
+            </ul>
+        </nav>
+        <div id="clock"></div>
+    </header>
+
+    <section id="project1-intro" class="project1-intro">
+        <div>
+            <h1>CHEF 60 FOODS</h1>
+            <p>Chef 60 is a web application developed as a final-year project. It enables users to create reservations, place orders, and make payments directly through the platform. Additionally, the application helps restaurants manage reservations and online orders efficiently.</p>
+        </div>
+
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('gallery')">&#x2193;</span>
+        </div>
+    </section>
+    
+    <section id="gallery" class="gallery">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('project1-intro')">&#x2191;</span>
+        </div>
+
+        <h1>Gallery</h1>
+
+        <div class="gallery-container">
+            
+            <!-- <div class="gallery-item" onclick="openModal('assets/Chef60-1.png')">
+                <img src="assets/Chef60-1.png" alt="Screenshot 1">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/Chef60-login.png')">
+                <img src="assets/Chef60-login.png" alt="Screenshot 2">
+            </div> -->
+            <div class="gallery-item" onclick="openModal('assets/Chef60-signUp.png')">
+                <img src="assets/Chef60-signUp.png" alt="Screenshot 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/Chef60-reservation.png')">
+                <img src="assets/Chef60-reservation.png" alt="Screenshot 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/Chef60-menu.png')">
+                <img src="assets/Chef60-menu.png" alt="Screenshot 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/Chef60-admin.png')">
+                <img src="assets/Chef60-admin.png" alt="Screenshot 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/Chef60-email1.png')">
+                <img src="assets/Chef60-email1.png" alt="Screenshot 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/Chef60-email2.png')">
+                <img src="assets/Chef60-email2.png" alt="Screenshot 3">
+            </div>
+        </div>
+        
+        <div class="down-nav">
+            <span class="arrow-down" onclick="scrollToSection('project1-stack')">&#x2193;</span>
+        </div>
+    </section>
+
+    <section id="project1-stack" class="project1-stack">
+        <div class="up-nav">
+            <span class="arrow-down" onclick="scrollToSection('gallery')">&#x2191;</span>
+        </div>
+
+        <div>
+            <h1>TOOLS</h1>
+
+            <ul>
+                <li>PHP</li>
+                <li>HTML, CSS</li>
+                <li>JavaScript</li>
+                <li>MySQL</li>
+                <li>SendGrid API</li>
+            </ul>
+
+            <p>View the full repo <a href="https://github.com/codenameKidsNextD00r/Chef60Foods" target="_blank">here</a></p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Expanded Screenshot">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bongani Mlumbi. All rights reserved.</p>
+    </footer>
+
+    <script src="dynamics.js"></script>
+    <script>
+        // Open Modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        // Close Modal
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
