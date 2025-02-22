@@ -161,3 +161,118 @@ h1, h2 {
 .arrow-down {
     bottom: 10px;
 }
+
+/* Existing CSS remains the same until the end of the file */
+
+/* Add these media queries at the end of your CSS file */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 5px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    #clock {
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    .typing {
+        font-size: 2em;
+        margin-bottom: 100px;
+    }
+
+    .about-content, .projects-content, .project1-intro {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .about-img img, .projects-img img {
+        max-width: 200px;
+        max-height: 200px;
+        margin-right: 0;
+    }
+
+    .about-text, .project-text {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    #about-me p {
+        font-size: 0.8em;
+    }
+
+    .arrow-up, .arrow-down {
+        font-size: 1.5em;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    nav ul {
+        font-size: 10px;
+    }
+
+    .typing {
+        font-size: 1.5em;
+        margin-bottom: 50px;
+    }
+
+    .about-img img, .projects-img img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    #about-me p {
+        font-size: 0.7em;
+    }
+
+    .arrow-up, .arrow-down {
+        font-size: 1.2em;
+    }
+}
+
+#menu-toggle {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block; /* Show on smaller screens */
+    }
+
+    #nav-menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    #nav-menu.active {
+        display: flex; /* Show menu when active */
+    }
+}
