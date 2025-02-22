@@ -271,3 +271,36 @@ h1, h2 {
         display: flex;
     }
 }
+
+#game {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+#snake-game {
+    border: 2px solid #00ff00; /* Green border */
+    background-color: #000; /* Black background */
+    display: block;
+    margin: 0 auto;
+}
+
+#game p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00ff00;
+}
+
+@media (max-width: 768px) {
+    #snake-game {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #snake-game {
+        width: 250px;
+        height: 250px;
+    }
+}
